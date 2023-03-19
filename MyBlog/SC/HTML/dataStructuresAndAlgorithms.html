@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Cấu trúc dữ liệu và giải thuật</title>
+    <link rel="stylesheet" href="../CSS/datastructure.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="../JS/jquery/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="../JS/bootstrap/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../JS/bootstrap/bootstrap-4.6.0-dist/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>abMe.com</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#" onclick="location.href = 'home.html'"><i class="fas fa-home"></i> Trang chủ</a>
+                </li>
+                <li>
+                    <a href="#" onclick="location.href = 'about.html'"><i class="far fa-id-card"></i> Thông tin cá
+                        nhân</a>
+                </li>
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                            class="fas fa-blog"></i> Blog</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#" onclick="location.href='programming.html'"><i class="fas fa-code"></i> Nhập môn
+                                lập trình</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href = 'dataStructuresAndAlgorithms.html'"><i
+                                    class="fas fa-project-diagram"></i> Cấu trúc dữ liệu và giải thuật</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href='sqlServer.html'"><i class="fas fa-database"></i> Hệ quản
+                                trị cơ sở dữ liệu</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href='news.html'"><i class="far fa-newspaper"></i> Tin tức</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                            class="far fa-folder-open"></i> Tài liệu</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#" onclick="location.href='ebook.html'"><i class="fas fa-book"></i> E-book</a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick="location.href='exam.html'"><i class="far fa-file-alt"></i> Đề thi</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href='otherDocuments.html'"><i
+                                    class="fas fa-file-contract"></i> Tài liệu khác</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" onclick="location.href = 'contact.html'"><i class="far fa-paper-plane"></i> Liên hệ</a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <!-- Facebook -->
+                    <a class="btn btn-primary m-1 sfb" href="#!"
+                        role="button"><i class="fab fa-facebook-f"></i></a>
+
+                    <!-- Twitter -->
+                    <a class="btn btn-primary m-1 stw"href="#!"
+                        role="button"><i class="fab fa-twitter"></i></a>
+
+                    <!-- Google -->
+                    <a class="btn btn-primary m-1 sgg" href="#!"
+                        role="button"><i class="fab fa-google"></i></a>
+                    <!-- Github -->
+                    <a class="btn btn-primary m-1 sg" href="#!"
+                        role="button"><i class="fab fa-github"></i></a>
+                </section>
+
+                <p class="pl-2 text-justify">Đăng ký nhận tin:</p>
+                <div class="input-group my-2">
+                    <input type="email" class="form-control bg-light" placeholder="Email của bạn?">
+                    <div class="input-group-append">
+                        <button class="btn btn-success" type="button">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+                <span class="text-center" style="font-size:14px; "><i class="far fa-copyright"></i> Copyright by G4 CNTT1502 </span>
+            </div>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <button class="btn btn-secondary d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto my-2">
+                            <li class="nav-item active">
+                                <div class="input-group">
+                                    <input type="text" class="form-control bg-light" placeholder="Bạn cần tìm gì?">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" type="button">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item" data-toggle="modal" data-target="#myModal">
+                                <a class="nav-link" href="#" onclick="location.href = 'login.html'"><i
+                                        class="fas fa-sign-in-alt"></i> Đăng nhập</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" onclick="location.href = 'account.html'"><i
+                                        class="fas fa-user"></i> Tài khoản</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+            <div class="container" id="data-structure">
+                <h1 class="py-3">CẤU TRÚC DỮ LIỆU VÀ GIẢI THUẬT</h1>
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="dataStructure-tab" data-toggle="tab"
+                                    href="#dataStructure" role="tab">Cấu trúc dữ liệu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#algorithm" role="tab">Giải
+                                    thuật</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#binary-tree"
+                                    role="tab">Cây nhị phân</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#graph" role="tab">Đồ
+                                    thị</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-9">
+                        <div class="tab-content" id="myTabContent">
+
+                            <!-- Data structure -->
+                            <div class="tab-pane fade show active" id="dataStructure" role="tabpanel">
+                                <div class="row posts align-items-center mb-2 p-3">
+                                    <div class="col-sm-5">
+                                        <img class="d-block img-thumbnail" src="../IMG/Linkedlist.png" alt="">
+                                    </div>
+                                    <div class="col-sm-7 pt-2">
+                                        <div class="card-block">
+                                            <h6 class="card-title"><a href="">Danh sách liên kết đơn</a></h6>
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel,
+                                                consectetur. Mollitia commodi provident voluptatibus aperiam, aliquam
+                                                explicabo veniam totam sit maxime laborum ullam, dicta ipsam!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row posts align-items-center mb-2 p-3">
+                                    <div class="col-sm-5">
+                                        <img class="d-block img-thumbnail" src="../IMG/Linkedlist.png" alt="">
+                                    </div>
+                                    <div class="col-sm-7 pt-2">
+                                        <div class="card-block">
+                                            <h6 class="card-title"><a href="">Danh sách liên kết đơn</a></h6>
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel,
+                                                consectetur. Mollitia commodi provident voluptatibus aperiam, aliquam
+                                                explicabo veniam totam sit maxime laborum ullam, dicta ipsam!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row posts align-items-center mb-2 p-3">
+                                    <div class="col-sm-5">
+                                        <img class="d-block img-thumbnail" src="../IMG/Linkedlist.png" alt="">
+                                    </div>
+                                    <div class="col-sm-7 pt-2">
+                                        <div class="card-block">
+                                            <h6 class="card-title"><a href="">Danh sách liên kết đơn</a></h6>
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel,
+                                                consectetur. Mollitia commodi provident voluptatibus aperiam, aliquam
+                                                explicabo veniam totam sit maxime laborum ullam, dicta ipsam!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row posts align-items-center mb-2 p-3">
+                                    <div class="col-sm-5 pb-2">
+                                        <img class="d-block img-thumbnail" src="../IMG/Linkedlist.png" alt="">
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="card-block">
+                                            <h6 class="card-title"><a href="">Danh sách liên kết đơn</a></h6>
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel,
+                                                consectetur. Mollitia commodi provident voluptatibus aperiam, aliquam
+                                                explicabo veniam totam sit maxime laborum ullam, dicta ipsam!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row posts align-items-center mb-2 p-3">
+                                    <div class="col-sm-5">
+                                        <img class="d-block img-thumbnail" src="../IMG/Linkedlist.png" alt="">
+                                    </div>
+                                    <div class="col-sm-7 pt-2">
+                                        <div class="card-block">
+                                            <h6 class="card-title"><a href="">Danh sách liên kết đơn</a></h6>
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel,
+                                                consectetur. Mollitia commodi provident voluptatibus aperiam, aliquam
+                                                explicabo veniam totam sit maxime laborum ullam, dicta ipsam!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <nav aria-label="page navigation" class="float-lg-right">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item"><a class="page-link" href="#"
+                                                onclick="location.href = 'seeMorePost.html'"><i
+                                                    class="fas fa-angle-double-right"></i> Xem thêm</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+
+                            <!-- Algorithm -->
+                            <div class="tab-pane fade" id="algorithm" role="tabpanel">
+                                <div class="row posts align-items-center mb-2 p-3">
+                                    <div class="col-sm-5">
+                                        <img class="d-block img-thumbnail" src="../IMG/Binary-Search.png" alt="">
+                                    </div>
+                                    <div class="col-sm-7 pt-2">
+                                        <div class="card-block">
+                                            <h6 class="card-title"><a href="">Danh sách liên kết đơn</a></h6>
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel,
+                                                consectetur. Mollitia commodi provident voluptatibus aperiam, aliquam
+                                                explicabo veniam totam sit maxime laborum ullam, dicta ipsam!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row posts align-items-center mb-2 p-3">
+                                    <div class="col-sm-5">
+                                        <img class="d-block img-thumbnail" src="../IMG/Binary-Search.png" alt="">
+                                    </div>
+                                    <div class="col-sm-7 pt-2">
+                                        <div class="card-block">
+                                            <h6 class="card-title"><a href="">Danh sách liên kết đơn</a></h6>
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel,
+                                                consectetur. Mollitia commodi provident voluptatibus aperiam, aliquam
+                                                explicabo veniam totam sit maxime laborum ullam, dicta ipsam!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row posts align-items-center mb-2 p-3">
+                                    <div class="col-sm-5">
+                                        <img class="d-block img-thumbnail" src="../IMG/Binary-Search.png" alt="">
+                                    </div>
+                                    <div class="col-sm-7 pt-2">
+                                        <div class="card-block">
+                                            <h6 class="card-title"><a href="">Danh sách liên kết đơn</a></h6>
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel,
+                                                consectetur. Mollitia commodi provident voluptatibus aperiam, aliquam
+                                                explicabo veniam totam sit maxime laborum ullam, dicta ipsam!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row posts align-items-center mb-2 p-3">
+                                    <div class="col-sm-5">
+                                        <img class="d-block img-thumbnail" src="../IMG/Binary-Search.png" alt="">
+                                    </div>
+                                    <div class="col-sm-7 pt-2">
+                                        <div class="card-block">
+                                            <h6 class="card-title"><a href="">Danh sách liên kết đơn</a></h6>
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel,
+                                                consectetur. Mollitia commodi provident voluptatibus aperiam, aliquam
+                                                explicabo veniam totam sit maxime laborum ullam, dicta ipsam!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row posts align-items-center mb-2 p-3">
+                                    <div class="col-sm-5">
+                                        <img class="d-block img-thumbnail" src="../IMG/Binary-Search.png" alt="">
+                                    </div>
+                                    <div class="col-sm-7 pt-2">
+                                        <div class="card-block">
+                                            <h6 class="card-title"><a href="">Danh sách liên kết đơn</a></h6>
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel,
+                                                consectetur. Mollitia commodi provident voluptatibus aperiam, aliquam
+                                                explicabo veniam totam sit maxime laborum ullam, dicta ipsam!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <nav aria-label="page navigation" class="float-lg-right">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item"><a class="page-link" href="#"><i
+                                                    class="fas fa-angle-double-right"></i> Xem thêm</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+
+                            <!-- Binary tree -->
+                            <div class="tab-pane fade" id="binary-tree" role="tabpanel" aria-labelledby="contact-tab">
+                                <div class="row posts align-items-center mb-2 p-3">
+                                    <div class="col-sm-5">
+                                        <img class="d-block img-thumbnail" src="../IMG/binary-tree-to-DLL.png" alt="">
+                                    </div>
+                                    <div class="col-sm-7 pt-2">
+                                        <div class="card-block">
+                                            <h6 class="card-title"><a href="">Danh sách liên kết đơn</a></h6>
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel,
+                                                consectetur. Mollitia commodi provident voluptatibus aperiam, aliquam
+                                                explicabo veniam totam sit maxime laborum ullam, dicta ipsam!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row posts align-items-center mb-2 p-3">
+                                    <div class="col-sm-5">
+                                        <img class="d-block img-thumbnail" src="../IMG/binary-tree-to-DLL.png" alt="">
+                                    </div>
+                                    <div class="col-sm-7 pt-2">
+                                        <div class="card-block">
+                                            <h6 class="card-title"><a href="">Danh sách liên kết đơn</a></h6>
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel,
+                                                consectetur. Mollitia commodi provident voluptatibus aperiam, aliquam
+                                                explicabo veniam totam sit maxime laborum ullam, dicta ipsam!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row posts align-items-center mb-2 p-3">
+                                    <div class="col-sm-5">
+                                        <img class="d-block img-thumbnail" src="../IMG/binary-tree-to-DLL.png" alt="">
+                                    </div>
+                                    <div class="col-sm-7 pt-2">
+                                        <div class="card-block">
+                                            <h6 class="card-title"><a href="">Danh sách liên kết đơn</a></h6>
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel,
+                                                consectetur. Mollitia commodi provident voluptatibus aperiam, aliquam
+                                                explicabo veniam totam sit maxime laborum ullam, dicta ipsam!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row posts align-items-center mb-2 p-3">
+                                    <div class="col-sm-5">
+                                        <img class="d-block img-thumbnail" src="../IMG/binary-tree-to-DLL.png" alt="">
+                                    </div>
+                                    <div class="col-sm-7 pt-2">
+                                        <div class="card-block">
+                                            <h6 class="card-title"><a href="">Danh sách liên kết đơn</a></h6>
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel,
+                                                consectetur. Mollitia commodi provident voluptatibus aperiam, aliquam
+                                                explicabo veniam totam sit maxime laborum ullam, dicta ipsam!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row posts align-items-center mb-2 p-3">
+                                    <div class="col-sm-5">
+                                        <img class="d-block img-thumbnail" src="../IMG/binary-tree-to-DLL.png" alt="">
+                                    </div>
+                                    <div class="col-sm-7 pt-2">
+                                        <div class="card-block">
+                                            <h6 class="card-title"><a href="">Danh sách liên kết đơn</a></h6>
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel,
+                                                consectetur. Mollitia commodi provident voluptatibus aperiam, aliquam
+                                                explicabo veniam totam sit maxime laborum ullam, dicta ipsam!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <nav aria-label="page navigation" class="float-lg-right">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item"><a class="page-link" href="#"><i
+                                                    class="fas fa-angle-double-right"></i> Xem thêm</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+
+                            <!-- graph -->
+                            <div class="tab-pane fade" id="graph" role="tabpanel" aria-labelledby="contact-tab">
+                                <div class="row posts align-items-center mb-2 p-3">
+                                    <div class="col-sm-5">
+                                        <img class="d-block img-thumbnail" src="../IMG/graph.png" alt="">
+                                    </div>
+                                    <div class="col-sm-7 pt-2">
+                                        <div class="card-block">
+                                            <h6 class="card-title"><a href="">Danh sách liên kết đơn</a></h6>
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel,
+                                                consectetur. Mollitia commodi provident voluptatibus aperiam, aliquam
+                                                explicabo veniam totam sit maxime laborum ullam, dicta ipsam!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row posts align-items-center mb-2 p-3">
+                                    <div class="col-sm-5">
+                                        <img class="d-block img-thumbnail" src="../IMG/graph.png" alt="">
+                                    </div>
+                                    <div class="col-sm-7 pt-2">
+                                        <div class="card-block">
+                                            <h6 class="card-title"><a href="">Danh sách liên kết đơn</a></h6>
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel,
+                                                consectetur. Mollitia commodi provident voluptatibus aperiam, aliquam
+                                                explicabo veniam totam sit maxime laborum ullam, dicta ipsam!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row posts align-items-center mb-2 p-3">
+                                    <div class="col-sm-5">
+                                        <img class="d-block img-thumbnail" src="../IMG/graph.png" alt="">
+                                    </div>
+                                    <div class="col-sm-7 pt-2">
+                                        <div class="card-block">
+                                            <h6 class="card-title"><a href="">Danh sách liên kết đơn</a></h6>
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel,
+                                                consectetur. Mollitia commodi provident voluptatibus aperiam, aliquam
+                                                explicabo veniam totam sit maxime laborum ullam, dicta ipsam!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row posts align-items-center mb-2 p-3">
+                                    <div class="col-sm-5">
+                                        <img class="d-block img-thumbnail" src="../IMG/graph.png" alt="">
+                                    </div>
+                                    <div class="col-sm-7 pt-2">
+                                        <div class="card-block">
+                                            <h6 class="card-title"><a href="">Danh sách liên kết đơn</a></h6>
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel,
+                                                consectetur. Mollitia commodi provident voluptatibus aperiam, aliquam
+                                                explicabo veniam totam sit maxime laborum ullam, dicta ipsam!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row posts align-items-center mb-2 p-3">
+                                    <div class="col-sm-5">
+                                        <img class="d-block img-thumbnail" src="../IMG/graph.png" alt="">
+                                    </div>
+                                    <div class="col-sm-7 pt-2">
+                                        <div class="card-block">
+                                            <h6 class="card-title"><a href="">Danh sách liên kết đơn</a></h6>
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel,
+                                                consectetur. Mollitia commodi provident voluptatibus aperiam, aliquam
+                                                explicabo veniam totam sit maxime laborum ullam, dicta ipsam!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <nav aria-label="page navigation" class="float-lg-right">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item"><a class="page-link" href="#"><i
+                                                    class="fas fa-angle-double-right"></i> Xem thêm</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back to top button -->
+            <button type="button" class="btn btn-danger btn-floating btn-lg" id="back-to-top">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar').toggleClass('active');
+                });
+            });
+
+            // back to top button
+            $(document).ready(function () {
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 50) {
+                        $('#back-to-top').fadeIn();
+                    } else {
+                        $('#back-to-top').fadeOut();
+                    }
+                });
+                // scroll body to 0px on click
+                $('#back-to-top').click(function () {
+                    $('body,html').animate({
+                        scrollTop: 0
+                    }, 400);
+                    return false;
+                });
+            });
+        </script>
+</body>
+
+</html>

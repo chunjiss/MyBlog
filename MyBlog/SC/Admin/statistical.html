@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../CSS/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="../JS/jquery/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="../JS/bootstrap/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../JS/bootstrap/bootstrap-4.6.0-dist/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <a class="sidebar-brand" href="../HTML/admin.html">
+                    <span class="pl-4 text-white font-weight-bolder">Administration</span>
+                </a>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a class="sidebar-link" onclick="location.href='admin.html'" href="#">
+                        <i class="fab fa-buffer"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href=""><i class="far fa-user"></i> Profile</a>
+                </li>
+                <li>
+                    <a href=""><i class="fas fa-cog"></i> Settings</a>
+                </li>
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i
+                            class="far fa-clipboard"></i> Manage</a>
+
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#" onclick="location.href='manage-post.html'"><i class="far fa-copy"></i> Post</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href=''"><i class="fas fa-bars"></i> Menu</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href=''"><i class="fab fa-wpforms"></i> Form</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href='manage-user-accounts.html'"><i class="far fa-user-circle"></i> User</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" onclick="location.href = 'statistical.html'"><i class="fas fa-chart-line"></i>
+                        Statistical</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <button class="btn btn-light d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-cog"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto my-2">
+                            <!-- search -->
+                            <li class="nav-item active mt-1 pt-1 pr-2">
+                                <div class="input-group">
+                                    <input type="text" class="form-control bg-light" placeholder="Search...">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown mt-1">
+                                <button class="btn btn-link" href="#" id="alertsDropdown" data-toggle="dropdown">
+                                    <img src="../IMG/bell.png" width="35px" height="35px"
+                                        class="avatar img-fluid rounded mr-1" alt="avt-admin" />
+                                    <span class="indicator">2</span>
+                                </button>
+
+                                <div class="dropdown-menu dropdown-menu-sm-right p-0 m-0" id="notifications"
+                                    aria-labelledby="alertsDropdown">
+                                    <div class="list-group text-center">
+                                        <div href="#"
+                                            class="list-group-item disabled text-dark font-weight-bolder text-center">
+                                            Thông báo mới
+                                        </div>
+
+                                        <div href="#" class="list-group-item list-group-item-action align-items-center">
+                                            <div class="row">
+                                                <div class="col-md-2 align-items-center text-success pt-5">
+                                                    <i class="far fa-check-circle"></i>
+                                                </div>
+
+                                                <div class="col-md-10 text-left align-items-center">
+                                                    <h6 class="text-dark font-weight-bold">Cập nhập bài viết thành công
+                                                    </h6>
+                                                    <p class="text-black-50">Bạn đã thực hiện thao tác cập nhật nội dung
+                                                        bài viết</p>
+                                                    <small class="text-black-50">25 phút trước</small>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div href="#" class="list-group-item list-group-item-action align-items-center">
+                                            <div class="row">
+                                                <div class="col-md-2 align-items-center text-danger pt-5">
+                                                    <i class="fas fa-exclamation"></i>
+                                                </div>
+
+                                                <div class="col-md-10 text-left align-items-center">
+                                                    <h6 class="text-dark font-weight-bold">Thông báo đăng nhập</h6>
+                                                    <p class="text-black-50">Bạn đã đăng nhập thành công vào 127.0.0.1
+                                                    </p>
+                                                    <small class="text-black-50">3 giờ trước</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="list-group-item list-group-item-action">Xem tất cả thông
+                                            báo</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item mt-1 mx-2">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle" type="button" id="dropdownMenu"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img src="../IMG/admin-avt.jpg" width="30px" height="30px"
+                                            class="avatar img-fluid rounded mr-1" alt="avt-admin" /> <span
+                                            class="text-dark tex">Admin</span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-sm-right" aria-labelledby="dropdownMenu">
+                                        <button class="dropdown-item" type="button">
+                                            <i class="far fa-user"></i> Profile
+                                        </button>
+                                        <button class="dropdown-item" type="button">
+                                            <i class="fas fa-cogs"></i> Settings & Privacy
+                                        </button>
+                                        <button class="dropdown-item" type="button">
+                                            <i class="far fa-question-circle"></i> Help Center
+                                        </button>
+                                        <button class="dropdown-item" type="button">
+                                            <i class="fas fa-sign-out-alt"></i> Log out
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container">
+                <div class="row mb-2 mb-xl-3">
+                    <div class="col-auto d-none d-sm-block">
+                        <h3><strong>Statistical</strong></h3>
+                    </div>
+
+                    <div class="col-auto ml-auto text-right mt-n1">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb bg-transparent p-0 mt-1 mb-0">
+                                <li class="breadcrumb-item"><a href="#" class="text-dark text-decoration-none">Admin</a>
+                                </li>
+                                <li class="breadcrumb-item active text-black-50">Statistical</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="row statistical-dashboard">
+                    <div class="col-lg-6 d-flex">
+                        <div class="w-100">
+                            <div class="row">
+                                <div class="col-sm-6 pb-3">
+                                    <div class="card mb-4 bg-light">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-4 font-weight-bold">Online Users</h5>
+                                            <h1 class="mt-1 mb-3 text-success"><i class="fas fa-circle"></i> 100</h1>
+                                            <div class="mb-1">
+                                                <span class="text-success"> 3.65% </span>
+                                                <span class="text-muted">Just updated</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card mt-4 bg-light">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-4 font-weight-bold">Total user</h5>
+                                            <h1 class="mt-1 mb-3 text-secondary"><i class="fas fa-users"></i> 1055</h1>
+                                            <div class="mb-1">
+                                                <span class="text-success"> 5.25% </span>
+                                                <span class="text-muted">Since Yesterday</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 pb-3">
+                                    <div class="card mb-4 bg-light">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-4 font-weight-bold">Comment</h5>
+                                            <h1 class="mt-1 mb-3 text-primary"><i class="far fa-comment-dots"></i> 1.300
+                                            </h1>
+                                            <div class="mb-1">
+                                                <span class="text-success"> 6.65% </span>
+                                                <span class="text-muted">Since last week</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mt-4 bg-light">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-4 font-weight-bold">Share</h5>
+                                            <h1 class="mt-1 mb-3 text-muted"><i class="far fa-share-square"></i> 1125
+                                            </h1>
+                                            <div class="mb-1">
+                                                <span class="text-success"> 9.25% </span>
+                                                <span class="text-muted">Since last week</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 d-flex">
+                        <div class="w-100">
+                            <div class="row">
+                                <div class="col-sm-6 pb-3">
+                                    <div class="card mb-4 bg-light">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-4 font-weight-bold">Download</h5>
+                                            <h1 class="mt-1 mb-3 text-info"><i class="fas fa-download"></i> 1205</h1>
+                                            <div class="mb-1">
+                                                <span class="text-success"> 3.65% </span>
+                                                <span class="text-muted">Since last week</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mt-4 bg-light">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-4 font-weight-bold">Visitors</h5>
+                                            <h1 class="mt-1 mb-3 text-warning"><i class="fas fa-eye"></i> 1005</h1>
+                                            <div class="mb-1">
+                                                <span class="text-success"> 5.25% </span>
+                                                <span class="text-muted">Since last week</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 pb-3">
+                                    <div class="card mb-4 bg-light">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-4 font-weight-bold">Ebook</h5>
+                                            <h1 class="mt-1 mb-3 text-success"><i class="fas fa-book"></i> 1.300</h1>
+                                            <div class="mb-1">
+                                                <span class="text-success"> 6.65% </span>
+                                                <span class="text-muted">Since last week</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card mt-4 bg-light">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-4 font-weight-bold">News</h5>
+                                            <h1 class="mt-1 mb-3 text-danger"><i class="fas fa-newspaper"></i> 1125</h1>
+                                            <div class="mb-1">
+                                                <span class="text-success">9.25% </span>
+                                                <span class="text-muted">Since last week</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row statistical-dashboard">
+                    <div class="col-lg-6 d-flex">
+                        <div class="w-100">
+                            <div class="row">
+                                <div class="col-sm-6 pb-3">
+                                    <div class="card mb-4 bg-light">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-4 font-weight-bold">Total admin</h5>
+                                            <h1 class="mt-1 mb-3" style="color: #273c75;"><i
+                                                    class="fas fa-user-cog"></i> 10</h1>
+                                        </div>
+                                    </div>
+                                    <div class="card mt-4 bg-light">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-4 font-weight-bold">Total like</h5>
+                                            <h1 class="mt-1 mb-3" style="color: #40739e;"><i
+                                                    class="far fa-thumbs-up"></i> 1055</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 pb-3">
+                                    <div class="card mb-4 bg-light">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-4 font-weight-bold">Access/day</h5>
+                                            <h1 class="mt-1 mb-3" style="color: #4cd137;"><i class="fas fa-link"></i>
+                                                1.300</h1>
+                                        </div>
+                                    </div>
+                                    <div class="card mt-4 bg-light">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-4 font-weight-bold">Contact</h5>
+                                            <h1 class="mt-1 mb-3" style="color: #e84118;"><i
+                                                    class="far fa-paper-plane"></i> 1125</h1>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 d-flex">
+                        <div class="w-100">
+                            <div class="row">
+                                <div class="col-sm-6 pb-3">
+                                    <div class="card mb-4 bg-light">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-4 font-weight-bold">Download</h5>
+                                            <h1 class="mt-1 mb-3" style="color: #e1b12c;"><i
+                                                    class="fas fa-download"></i> 1205</h1>
+                                        </div>
+                                    </div>
+                                    <div class="card mt-4 bg-light">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-4 font-weight-bold">Visitors</h5>
+                                            <h1 class="mt-1 mb-3" style="color: #718093;"><i class="fas fa-eye"></i>
+                                                1005</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 pb-3">
+                                    <div class="card mb-4 bg-light">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-4 font-weight-bold">Ebook</h5>
+                                            <h1 class="mt-1 mb-3" style="color: #d35400;"><i class="fas fa-book"></i>
+                                                1.300</h1>
+                                        </div>
+                                    </div>
+                                    <div class="card mt-4 bg-light">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-4 font-weight-bold">News</h5>
+                                            <h1 class="mt-1 mb-3" style="color: #f39c12;"><i
+                                                    class="fas fa-newspaper"></i> 1125</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-3" id="lastest-update">
+                    <div class="card-header pb-0">
+                        <div class="row p-2">
+                            <div class="col-md-6">
+                                <h4 class="font-weight-bold text-black-50">Latest updates</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-success">
+                                    View all
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body pt-0">
+                        <table class="table table-striped mb-0">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Updated name</th>
+                                <th scope="col">Updated description</th>
+                                <th scope="col">Update time</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Update 1</td>
+                                <td>Lorem, ipsum dolor.</td>
+                                <td><small class="text-muted">33 minutes ago</small></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Update 1</td>
+                                <td>Lorem, ipsum dolor.</td>
+                                <td><small class="text-muted">33 minutes ago</small></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Update 1</td>
+                                <td>Lorem, ipsum dolor.</td>
+                                <td><small class="text-muted">33 minutes ago</small></td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Update 1</td>
+                                <td>Lorem, ipsum dolor.</td>
+                                <td><small class="text-muted">33 minutes ago</small></td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Update 1</td>
+                                <td>Lorem, ipsum dolor.</td>
+                                <td><small class="text-muted">33 minutes ago</small></td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Update 1</td>
+                                <td>Lorem, ipsum dolor.</td>
+                                <td><small class="text-muted">33 minutes ago</small></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Update 1</td>
+                                <td>Lorem, ipsum dolor.</td>
+                                <td><small class="text-muted">33 minutes ago</small></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back to top button -->
+            <button type="button" class="btn btn-danger btn-floating btn-lg" id="back-to-top">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+
+        // back to top button
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 50) {
+                    $('#back-to-top').fadeIn();
+                } else {
+                    $('#back-to-top').fadeOut();
+                }
+            });
+            // scroll body to 0px on click
+            $('#back-to-top').click(function () {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 400);
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>

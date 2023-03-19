@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hệ quản trị cơ sở dữ liệu</title>
+  <link rel="stylesheet" href="../CSS/sqlServer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script src="../JS/jquery/jquery-3.6.0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="../JS/bootstrap/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="../JS/bootstrap/bootstrap-4.6.0-dist/css/bootstrap.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <h3>abMe.com</h3>
+      </div>
+
+      <ul class="list-unstyled components">
+        <li class="active">
+          <a href="#" onclick="location.href = 'home.html'"><i class="fas fa-home"></i> Trang chủ</a>
+        </li>
+        <li>
+          <a href="#" onclick="location.href = 'about.html'"><i class="far fa-id-card"></i> Thông tin cá nhân</a>
+        </li>
+        <li>
+          <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+              class="fas fa-blog"></i> Blog</a>
+          <ul class="collapse list-unstyled" id="homeSubmenu">
+            <li>
+              <a href="#" onclick="location.href='programming.html'"><i class="fas fa-code"></i> Nhập môn lập trình</a>
+            </li>
+            <li>
+              <a href="#" onclick="location.href='dataStructuresAndAlgorithms.html'"><i
+                  class="fas fa-project-diagram"></i> Cấu trúc dữ liệu và giải thuật</a>
+            </li>
+            <li>
+              <a href="#" onclick="location.href='sqlServer.html'"><i class="fas fa-database"></i> Hệ quản trị cơ sở dữ liệu</a>
+            </li>
+            <li>
+              <a href="#" onclick="location.href='news.html'"><i class="far fa-newspaper"></i> Tin tức</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+              class="far fa-folder-open"></i> Tài liệu</a>
+          <ul class="collapse list-unstyled" id="pageSubmenu">
+            <li>
+              <a href="#" onclick="location.href='ebook.html'"><i class="fas fa-book"></i> E-book</a>
+            </li>
+
+            <li>
+              <a href="#" onclick="location.href='exam.html'"><i class="far fa-file-alt"></i> Đề thi</a>
+            </li>
+            <li>
+              <a href="#" onclick="location.href='otherDocuments.html'"><i class="fas fa-file-contract"></i> Tài liệu
+                khác</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" onclick="location.href = 'contact.html'"><i class="far fa-paper-plane"></i> Liên hệ</a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a class="btn btn-primary m-1 sfb" href="#!"
+              role="button"><i class="fab fa-facebook-f"></i></a>
+
+          <!-- Twitter -->
+          <a class="btn btn-primary m-1 stw"href="#!"
+              role="button"><i class="fab fa-twitter"></i></a>
+
+          <!-- Google -->
+          <a class="btn btn-primary m-1 sgg" href="#!"
+              role="button"><i class="fab fa-google"></i></a>
+          <!-- Github -->
+          <a class="btn btn-primary m-1 sg" href="#!"
+              role="button"><i class="fab fa-github"></i></a>
+      </section>
+
+        <p class="pl-2 text-justify">Đăng ký nhận tin:</p>
+        <div class="input-group my-2">
+          <input type="email" class="form-control bg-light" placeholder="Email của bạn?">
+          <div class="input-group-append">
+            <button class="btn btn-success" type="button">
+              Submit
+            </button>
+          </div>
+        </div>
+        <span class="text-center" style="font-size:14px; "><i class="far fa-copyright"></i> Copyright by G4 CNTT1502 </span>
+      </div>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+          <button type="button" id="sidebarCollapse" class="btn btn-info">
+            <i class="fas fa-align-left"></i>
+          </button>
+          <button class="btn btn-secondary d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-align-justify"></i>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav ml-auto my-2">
+              <li class="nav-item active">
+                <div class="input-group">
+                  <input type="text" class="form-control bg-light" placeholder="Bạn cần tìm gì?">
+                  <div class="input-group-append">
+                    <button class="btn btn-success" type="button">
+                      <i class="fa fa-search"></i>
+                    </button>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item" data-toggle="modal" data-target="#myModal">
+                <a class="nav-link" href="#" onclick="location.href = 'login.html'"><i class="fas fa-sign-in-alt"></i>
+                  Đăng nhập</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="location.href = 'account.html'"><i class="fas fa-user"></i> Tài
+                  khoản</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <h3 class="text-dark font-weight-bold p-3">Hệ quản trị cơ sở dữ liệu</h3>
+        <div class="accordion">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">
+                <button class="btn btn-link font-weight-bold col-12 text-left" data-toggle="collapse" data-target="#chapter1"><i class="fas fa-play"></i> Getting Started with SQL Server</button>
+              </h5>
+            </div>
+            <div id="chapter1" class="collapse">
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><a href="">What is SQL Server</a></li>
+                  <li class="list-group-item"><a href="">Install the SQL Server 2017 Developer Edition</a></li>
+                  <li class="list-group-item"><a href="">Connect to the SQL Server</a></li>
+                  <li class="list-group-item"><a href="">Explore an SQL Server Sample Database</a></li>
+                  <li class="list-group-item"><a href="">Load the SQL Server Sample Database</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">
+                <button class="btn btn-link font-weight-bold col-12 text-left" data-toggle="collapse" data-target="#chapter2"><i class="fas fa-play"></i> SQL Server Basics</button>
+              </h5>
+            </div>
+            <div id="chapter2" class="collapse">
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><a href="">Querying data</a></li>
+                  <li class="list-group-item"><a href="">Sorting data</a></li>
+                  <li class="list-group-item"><a href="">Limiting rows</a></li>
+                  <li class="list-group-item"><a href="">Filtering data</a></li>
+                  <li class="list-group-item"><a href="">Joining tables</a></li>
+                  <li class="list-group-item"><a href="">Grouping data</a></li>
+                  <li class="list-group-item"><a href="">Subquery</a></li>
+                  <li class="list-group-item"><a href="">Set Operators</a></li>
+                  <li class="list-group-item"><a href="">Common Table Expression (CTE)</a></li>
+                  <li class="list-group-item"><a href="">Pivot</a></li>
+                  <li class="list-group-item"><a href="">Modifying data</a></li>
+                  <li class="list-group-item"><a href="">Data definition</a></li>
+                  <li class="list-group-item"><a href="">SQL Server Data Types</a></li>
+                  <li class="list-group-item"><a href="">Constraints</a></li>
+                  <li class="list-group-item"><a href="">Expressions</a></li>
+                  <li class="list-group-item"><a href="">Useful Tips</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">
+                <button class="btn btn-link font-weight-bold col-12 text-left" data-toggle="collapse" data-target="#chapter3"><i class="fas fa-play"></i> SQL Server Views</button>
+              </h5>
+            </div>
+            <div id="chapter3" class="collapse">
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><a href="">SQL Server Views</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">
+                <button class="btn btn-link font-weight-bold col-12 text-left" data-toggle="collapse" data-target="#chapter4"><i class="fas fa-play"></i> SQL Server Indexes</button>
+              </h5>
+            </div>
+            <div id="chapter4" class="collapse">
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><a href="">SQL Server Indexes</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">
+                <button class="btn btn-link font-weight-bold col-12 text-left" data-toggle="collapse" data-target="#chapter5"><i class="fas fa-play"></i> SQL Server Stored Procedures</button>
+              </h5>
+            </div>
+            <div id="chapter5" class="collapse">
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><a href="">Getting started with SQL Server Stored Procedures</a></li>
+                  <li class="list-group-item"><a href="">Control-of-flow statements</a></li>
+                  <li class="list-group-item"><a href="">Cursors</a></li>
+                  <li class="list-group-item"><a href="">Handling Exceptions</a></li>
+                  <li class="list-group-item"><a href="">Dynamic SQL</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">
+                <button class="btn btn-link font-weight-bold col-12 text-left" data-toggle="collapse" data-target="#chapter6"><i class="fas fa-play"></i> SQL Server User-defined Functions</button>
+              </h5>
+            </div>
+            <div id="chapter6" class="collapse">
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><a href="">SQL Server User-defined Functions</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="mb-0">
+                <button class="btn btn-link font-weight-bold col-12 text-left" data-toggle="collapse" data-target="#chapter7"><i class="fas fa-play"></i> SQL Server Triggers</button>
+              </div>
+            </div>
+            <div id="chapter7" class="collapse">
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><a href="">SQL Server Triggers</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Back to top button -->
+      <button type="button" class="btn btn-danger btn-floating btn-lg" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+      });
+    });
+
+    // back to top button
+    $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 50) {
+                    $('#back-to-top').fadeIn();
+                } else {
+                    $('#back-to-top').fadeOut();
+                }
+            });
+            // scroll body to 0px on click
+            $('#back-to-top').click(function () {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 400);
+                return false;
+            });
+        });
+  </script>
+</body>
+
+</html>

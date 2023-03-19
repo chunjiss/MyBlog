@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <script src="../JS/jquery/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="../JS/bootstrap/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../JS/bootstrap/bootstrap-4.6.0-dist/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-md-5 mt-5 pt-3 ml-auto mr-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="text-dark font-weight-bolder text-center">Admin login</h5>
+                </div>
+
+                <div class="card-body">
+                    <form action="">
+                        <!-- Username input -->
+                        <div class="form-outline mb-3">
+                            <label class="form-label font-weight-bold"><i class="fas fa-user-alt"></i> Tên tài
+                                khoản</label>
+                            <input type="text" placeholder="Account name" class="form-control" />
+                        </div>
+
+                        <!-- Password input -->
+                        <div class="form-outline mb-3">
+                            <label class="form-label font-weight-bold"><i class='bx bxs-lock'></i> Mật
+                                khẩu</label>
+                            <input type="password" placeholder="Password" class="form-control" />
+                        </div>
+
+                        <!-- 2 column grid layout -->
+                        <div class="row mb-3">
+                            <div class="col-md-6 d-flex justify-content-center">
+                                <!-- Checkbox -->
+                                <div class="form-check mb-3 mb-md-0">
+                                    <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked />
+                                    <label class="form-check-label" for="loginCheck"> Nhớ mật khẩu</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 d-flex justify-content-center">
+                                <a href="#!" onclick="location.href='admin-fogot-password.html'">Quên mật khẩu?</a>
+                            </div>
+                        </div>
+
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-primary btn-block mb-3">Đăng nhập</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <span>&copy; Copyright by G4 CNTT1502 2022</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

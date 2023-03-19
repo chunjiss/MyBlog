@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài viết</title>
+    <link rel="stylesheet" href="../CSS/articleDetails.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="../JS/jquery/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="../JS/bootstrap/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../JS/bootstrap/bootstrap-4.6.0-dist/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>abMe.com</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#" onclick="location.href = 'home.html'"><i class="fas fa-home"></i> Trang chủ</a>
+                </li>
+                <li>
+                    <a href="#" onclick="location.href = 'about.html'"><i class="far fa-id-card"></i> Thông tin cá
+                        nhân</a>
+                </li>
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                            class="fas fa-blog"></i> Blog</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#" onclick="location.href='programming.html'"><i class="fas fa-code"></i> Nhập môn
+                                lập trình</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href = 'dataStructuresAndAlgorithms.html'"><i
+                                    class="fas fa-project-diagram"></i> Cấu trúc dữ liệu và giải thuật</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href='sqlServer.html'"><i class="fas fa-database"></i> Hệ quản
+                                trị cơ sở dữ liệu</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href='news.html'"><i class="far fa-newspaper"></i> Tin tức</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                            class="far fa-folder-open"></i> Tài liệu</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#" onclick="location.href='ebook.html'"><i class="fas fa-book"></i> E-book</a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick="location.href='exam.html'"><i class="far fa-file-alt"></i> Đề thi</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href='otherDocuments.html'"><i
+                                    class="fas fa-file-contract"></i> Tài liệu khác</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" onclick="location.href = 'contact.html'"><i class="far fa-paper-plane"></i> Liên hệ</a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <!-- Facebook -->
+                    <a class="btn btn-primary m-1 sfb" href="#!"
+                        role="button"><i class="fab fa-facebook-f"></i></a>
+
+                    <!-- Twitter -->
+                    <a class="btn btn-primary m-1 stw"href="#!"
+                        role="button"><i class="fab fa-twitter"></i></a>
+
+                    <!-- Google -->
+                    <a class="btn btn-primary m-1 sgg" href="#!"
+                        role="button"><i class="fab fa-google"></i></a>
+                    <!-- Github -->
+                    <a class="btn btn-primary m-1 sg" href="#!"
+                        role="button"><i class="fab fa-github"></i></a>
+                </section>
+
+                <p class="pl-2 text-justify">Đăng ký nhận tin:</p>
+                <div class="input-group my-2">
+                    <input type="email" class="form-control bg-light" placeholder="Email của bạn?">
+                    <div class="input-group-append">
+                        <button class="btn btn-success" type="button">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+                <span class="text-center" style="font-size:14px; "><i class="far fa-copyright"></i> Copyright by G4 CNTT1502 </span>
+            </div>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <button class="btn btn-secondary d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto my-2">
+                            <li class="nav-item active">
+                                <div class="input-group">
+                                    <input type="text" class="form-control bg-light" placeholder="Bạn cần tìm gì?">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" type="button">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item" data-toggle="modal" data-target="#myModal">
+                                <a class="nav-link" href="#" onclick="location.href = 'login.html'"><i
+                                        class="fas fa-sign-in-alt"></i> Đăng nhập</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" onclick="location.href = 'account.html'"><i
+                                        class="fas fa-user"></i> Tài khoản</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+            <div class="container row">
+                <div class="col-md-8 pl-2">
+                    <div class="post-header">
+                        <header class="pb-2">
+                            <h1 class="pl-2">This heading</h1>
+
+                            <div class="row m-1">
+                                <div class="row col-md-4 ml-2">
+                                    <div class="pr-2">Bởi</div>
+                                    <strong>Admin</strong>
+                                </div>
+
+                                <div class="col-md-8">
+                                    <div class="row ml-2 justify-content-start">
+                                        <div class="pr-2">
+                                            <a href=""><i class="fas fa-eye"></i></a>
+                                            1252
+                                        </div>
+
+                                        <div class=" mr-2">
+                                            <a href=""><i class="far fa-comments"></i></a>
+                                            15
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </header>
+
+                        <div class="post-content p-2">
+                            <img src="../IMG/datastructure.jpg" alt="">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error rem suscipit nisi,
+                                voluptates autem aliquam, reiciendis commodi harum tenetur totam dignissimos iure natus
+                                dolorum maxime atque omnis, repellat non sunt!</p>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, debitis? Soluta
+                                exercitationem fuga ea excepturi, fugit delectus commodi eum dolorem totam nisi sed
+                                error, facilis neque pariatur quibusdam culpa numquam.
+                            </p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo reprehenderit, ad atque
+                                assumenda error voluptatum molestiae voluptate natus, eligendi incidunt impedit aperiam
+                                perferendis! Placeat, ullam recusandae. Distinctio neque dolor ducimus.
+                            </p>
+                        </div>
+
+                        <div class="references pl-2 border-top border-secondary">
+                            <h5 class="pt-2">Tài liệu tham khảo</h5>
+                            <ol class="pl-2">
+                                <li><a href="https://www.geeksforgeeks.org/">https://www.geeksforgeeks.org/</a></li>
+                                <li><a href="https://getbootstrap.com/">https://getbootstrap.com/</a></li>
+                                <li><a href="https://www.w3schools.com/">https://www.w3schools.com/</a></li>
+                            </ol>
+                        </div>
+                    </div>
+
+
+                    <div class="row pl-3">
+                        <div class="p-2">
+                            <button class="btn btn-info m-1" data-toggle="modal" data-target="#comment"><i
+                                    class="far fa-question-circle"></i> Hỏi đáp, bình luận</button>
+                            <button class="btn btn-primary m-1" data-toggle="collapse" data-target="#socialNetworks">
+                                <i class="fa fa-share" aria-hidden="true"></i> Share
+                            </button>
+                        </div>
+
+                        <div class="modal fade" id="comment">
+                            aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Gửi câu hỏi hoặc bình luận</h5>
+                                        <button type="button" class="close" data-dismiss="modal">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label class="col-form-label">Nhập tên của bạn:</label>
+                                                <input type="text" class="form-control" id="recipient-name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-form-label">Nhập câu hỏi/ bình luận:</label>
+                                                <textarea class="form-control" id="message-text"></textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Send</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2 ml-3 mt-2 mb-2">
+                            <div class="collapse multi-collapse" id="socialNetworks">
+                                <div class="row justify-content-center" id="socialMedia">
+                                    <button class="btn btn-sm btn-primary m-1"><i class="fab fa-facebook"></i></button>
+                                    <button class="btn btn-sm btn-primary m-1"><i class="fab fa-twitter"></i></button>
+                                    <button class="btn btn-sm btn-primary m-1"><i
+                                            class="fab fa-facebook-messenger"></i></button>
+                                    <button class="btn btn-sm btn-info m-1"><i class="fab fa-linkedin-in"></i></button>
+                                    <button class="btn btn-sm btn-dark m-1"><i class="fab fa-github"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mt-2 justify-content-center">
+                    <h5 class="text-center p-2">Các bài viết liên quan</h5>
+
+                    <div class="justify-content-center m-2" id="relatedArticles">
+
+                        <ul class="p-2 list-unstyled pre-scrollable" role="menu">
+                            <li class="p-2 border-bottom border-secondary text-center">
+                                <img class="image" src="../IMG/Binary-Search.png" alt="">
+                                <a href="#">Lorem ipsum dolor sit amet.</a>
+                            </li>
+                            <li class="p-2 border-bottom border-dark text-center">
+                                <img class="image" src="../IMG/doubleLinkedList.png" alt="">
+                                <a href="#">Lorem ipsum dolor sit amet.</a>
+                            </li>
+                            <li class="p-2 border-bottom border-dark text-center">
+                                <img src="../IMG/Linkedlist.png" alt="">
+                                <a href="#">Lorem ipsum dolor sit amet.</a>
+                            </li>
+
+                            <li class="p-2 border-bottom border-dark text-center">
+                                <img class="image" src="../IMG/Binary-Search.png" alt="">
+                                <a href="#">Lorem ipsum dolor sit amet.</a>
+                            </li>
+                            <li class="p-2 border-bottom border-dark text-center">
+                                <img class="image" src="../IMG/doubleLinkedList.png" alt="">
+                                <a href="#">Lorem ipsum dolor sit amet.</a>
+                            </li>
+                            <li class="p-2 border-bottom border-dark text-center">
+                                <img src="../IMG/Linkedlist.png" alt="">
+                                <a href="#">Lorem ipsum dolor sit amet.</a>
+                            </li>
+
+                            <li class="p-2 border-bottom border-dark text-center">
+                                <img class="image" src="../IMG/Binary-Search.png" alt="">
+                                <a href="#">Lorem ipsum dolor sit amet.</a>
+                            </li>
+                            <li class="p-2 border-bottom border-dark text-center">
+                                <img class="image" src="../IMG/doubleLinkedList.png" alt="">
+                                <a href="#">Lorem ipsum dolor sit amet.</a>
+                            </li>
+                            <li class="p-2 border-bottom border-dark text-center">
+                                <img src="../IMG/Linkedlist.png" alt="">
+                                <a href="#">Lorem ipsum dolor sit amet.</a>
+                            </li>
+
+                            <li class="p-2 border-bottom border-dark text-center">
+                                <img class="image" src="../IMG/queue.png" alt="">
+                                <a href="#">Lorem ipsum dolor sit amet.</a>
+                            </li>
+                            <li class="p-2 border-bottom border-dark text-center">
+                                <img class="image" src="../IMG/doubleLinkedList.png" alt="">
+                                <a href="#">Lorem ipsum dolor sit amet.</a>
+                            </li>
+                            <li class="p-2 border-bottom border-dark text-center">
+                                <img src="../IMG/Linkedlist.png" alt="">
+                                <a href="#">Lorem ipsum dolor sit amet.</a>
+                            </li>
+
+                            <li class="p-2 border-bottom border-dark text-center">
+                                <img class="image" src="../IMG/Binary-Search.png" alt="">
+                                <a href="#">Lorem ipsum dolor sit amet.</a>
+                            </li>
+                            <li class="p-2 border-bottom border-dark text-center">
+                                <img class="image" src="../IMG/doubleLinkedList.png" alt="">
+                                <a href="#">Lorem ipsum dolor sit amet.</a>
+                            </li>
+                            <li class="p-2 border-bottom border-dark text-center">
+                                <img src="../IMG/Linkedlist.png" alt="">
+                                <a href="#">Lorem ipsum dolor sit amet.</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back to top button -->
+            <button type="button" class="btn btn-danger btn-floating btn-lg" id="back-to-top">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar').toggleClass('active');
+                });
+            });
+
+            // back to top button
+            $(document).ready(function () {
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 50) {
+                        $('#back-to-top').fadeIn();
+                    } else {
+                        $('#back-to-top').fadeOut();
+                    }
+                });
+                // scroll body to 0px on click
+                $('#back-to-top').click(function () {
+                    $('body,html').animate({
+                        scrollTop: 0
+                    }, 400);
+                    return false;
+                });
+            });
+        </script>
+</body>
+
+</html>

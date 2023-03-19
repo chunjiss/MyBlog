@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhập môn lập trình</title>
+    <link rel="stylesheet" href="../CSS/programming.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="../JS/jquery/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="../JS/bootstrap/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../JS/bootstrap/bootstrap-4.6.0-dist/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>abMe.com</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#" onclick="location.href = 'home.html'"><i class="fas fa-home"></i> Trang chủ</a>
+                </li>
+                <li>
+                    <a href="#" onclick="location.href = 'about.html'"><i class="far fa-id-card"></i> Thông tin cá nhân</a>
+                </li>
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                            class="fas fa-blog"></i> Blog</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#" onclick="location.href='programming.html'"><i class="fas fa-code"></i> Nhập môn lập trình</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href='dataStructuresAndAlgorithms.html'"><i class="fas fa-project-diagram"></i> Cấu trúc dữ liệu và giải thuật</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href='sqlServer.html'"><i class="fas fa-database"></i> Hệ quản trị cơ sở dữ liệu</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href='news.html'"><i class="far fa-newspaper"></i> Tin tức</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                            class="far fa-folder-open"></i> Tài liệu</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#" onclick="location.href='ebook.html'"><i class="fas fa-book"></i> E-book</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#"onclick="location.href='exam.html'"><i class="far fa-file-alt"></i> Đề thi</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href='otherDocuments.html'"><i class="fas fa-file-contract"></i> Tài liệu khác</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" onclick="location.href = 'contact.html'"><i class="far fa-paper-plane"></i> Liên hệ</a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <!-- Facebook -->
+                    <a class="btn btn-primary m-1 sfb" href="#!"
+                        role="button"><i class="fab fa-facebook-f"></i></a>
+
+                    <!-- Twitter -->
+                    <a class="btn btn-primary m-1 stw"href="#!"
+                        role="button"><i class="fab fa-twitter"></i></a>
+
+                    <!-- Google -->
+                    <a class="btn btn-primary m-1 sgg" href="#!"
+                        role="button"><i class="fab fa-google"></i></a>
+                    <!-- Github -->
+                    <a class="btn btn-primary m-1 sg" href="#!"
+                        role="button"><i class="fab fa-github"></i></a>
+                </section>
+
+                <p class="pl-2 text-justify">Đăng ký nhận tin:</p>
+                <div class="input-group my-2">
+                    <input type="email" class="form-control bg-light" placeholder="Email của bạn?">
+                    <div class="input-group-append">
+                        <button class="btn btn-success" type="button">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+                <span class="text-center" style="font-size:14px; "><i class="far fa-copyright"></i> Copyright by G4 CNTT1502 </span>
+            </div>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <button class="btn btn-secondary d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto my-2">
+                            <li class="nav-item active">
+                                <div class="input-group">
+                                    <input type="text" class="form-control bg-light" placeholder="Bạn cần tìm gì?">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" type="button">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item" data-toggle="modal" data-target="#myModal">
+                                <a class="nav-link" href="#" onclick="location.href = 'login.html'"><i class="fas fa-sign-in-alt"></i> Đăng nhập</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" onclick="location.href = 'account.html'"><i class="fas fa-user"></i> Tài khoản</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container">
+                <h3 class="pl-3 font-weight-bolder">Nhập môn lập trình</h3>
+                <div class="list-group">
+                    <li class="card list-group-item">
+                       <div class="card-header">
+                          <span class="font-weight-bold">Chương 1: Cài đặt môi trường lập trình và chạy chương trình đầu tiên</span>
+                       </div>
+                       <div class="card-body">
+                          <ul class="list-group">
+                             <li class="list-group-item">
+                                 <a href="" class=""><i class="fas fa-play"></i> Cài đặt công cụ</a>
+                                </li>
+                             <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Chạy chương trình đầu tiên</a></li>
+                          </ul>
+                       </div>
+                    </li>
+
+                    <li class="card list-group-item">
+                        <div class="card-header">
+                           <span class="font-weight-bold">Chương 2: Nhập môn</span>
+                        </div>
+                        <div class="card-body">
+                           <ul class="list-group">          
+                            <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Giới thiệu về ngôn ngữ C</a></li>                    
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Các kiểu dữ liệu</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Nhập xuất dữ liệu cơ bản</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Các toán tử số học</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Các toán tử so sánh</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Toán tử gán</a></li>
+                           </ul>
+                        </div>
+                     </li>
+
+                     <li class="card list-group-item">
+                        <div class="card-header">
+                           <span class="font-weight-bold">Chương 3: Cấu trúc điểu khiển</span>
+                        </div>
+                        <div class="card-body">
+                           <ul class="list-group">
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Cấu trúc if</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Cấu trúc if ... else</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Toán tử ba ngôi</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Cấu trúc switch ... case</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Vòng lặp while</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Vòng lặp do ... while</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Vòng lặp for</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Lệnh break, continue và vòng lặp lồng nhau</a></li>
+                           </ul>
+                        </div>
+                     </li>
+
+                     <li class="card list-group-item">
+                        <div class="card-header">
+                           <span class="font-weight-bold">Chương 3: Hàm</span>
+                        </div>
+                        <div class="card-body">
+                           <ul class="list-group">
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Tổng quan về hàm</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Hàm trong thư viện math.h</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Cách viết hàm</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Cách gọi hàm</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Các ví dụ về sử dụng hàm</a></li>
+                           </ul>
+                        </div>
+                     </li>
+
+                     <li class="card list-group-item">
+                        <div class="card-header">
+                           <span class="font-weight-bold">Chương 4: Mảng</span>
+                        </div>
+                        <div class="card-body">
+                           <ul class="list-group">
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Mảng một chiều</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Mảng hai chiều</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Truyền mảng vào hàm</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Tìm kiếm trên mảng</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Sắp xếp mảng</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Thao tác thêm, sửa, xóa trên mảng</a></li>
+                           </ul>
+                        </div>
+                    </li>
+
+                    <li class="card list-group-item">
+                        <div class="card-header">
+                           <span class="font-weight-bold">Chương 5: Con trỏ</span>
+                        </div>
+                        <div class="card-body">
+                           <ul class="list-group justify-content-around">
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Tổn quan về con trỏ</i></a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Con trỏ và truyền tham chiếu</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Con trỏ và mảng một chiều</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Con trỏ hàm</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Cấp phát bộ nhớ động</a></li>
+                           </ul>
+                        </div>
+                     </li>
+
+                     <li class="card list-group-item">
+                        <div class="card-header">
+                           <span class="font-weight-bold">Chương 6: Kí tự và chuỗi kí tự</span>
+                        </div>
+                        <div class="card-body">
+                           <ul class="list-group">
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Tổng quan về kí tự và chuỗi kí tự</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Nhập xuất kí tự và chuỗi kí tự trong C</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Các hàm thao tác với kí tự đơn</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Các hàm thao tác với chuỗi kí tự</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Các hàm tìm kiếm, phân tách chuỗi</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Hàm chuyển đổi chuỗi kí tự sang dạng số và ngược lại</a></li>
+                           </ul>
+                        </div>
+                     </li>
+
+                     <li class="card list-group-item">
+                        <div class="card-header">
+                           <span class="font-weight-bold">Chương 7: Struct</span>
+                        </div>
+                        <div class="card-body">
+                           <ul class="list-group">
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Tổng quan về kiểu struct</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Truyền biến struct vào hàm</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Sử dụng typedef</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Các ví dụ thực hành với struct</a></li>
+                           </ul>
+                        </div>
+                     </li>
+
+                     <li class="card list-group-item">
+                        <div class="card-header">
+                           <span class="font-weight-bold">Chương 8: Thao tác với file</span>
+                        </div>
+                        <div class="card-body">
+                           <ul class="list-group">
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Tổng quan thao tác với file</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Đọc ghi file text</a></li>
+                              <li class="list-group-item"><a href=""><i class="fas fa-play"></i> Đọc ghi file nhị phân</a></li>                              
+                           </ul>
+                        </div>
+                     </li>
+                 </div>
+            </div>
+        </div>
+
+        <!-- Back to top button -->
+        <button type="button" class="btn btn-danger btn-floating btn-lg" id="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+
+        // back to top button
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 50) {
+                    $('#back-to-top').fadeIn();
+                } else {
+                    $('#back-to-top').fadeOut();
+                }
+            });
+            // scroll body to 0px on click
+            $('#back-to-top').click(function () {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 400);
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>

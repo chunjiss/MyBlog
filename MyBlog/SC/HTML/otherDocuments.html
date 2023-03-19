@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài liệu </title>
+    <link rel="stylesheet" href="../CSS/otherDocuments.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="../JS/jquery/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="../JS/bootstrap/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../JS/bootstrap/bootstrap-4.6.0-dist/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>abMe.com</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#" onclick="location.href = 'home.html'"><i class="fas fa-home"></i> Trang chủ</a>
+                </li>
+                <li>
+                    <a href="#" onclick="location.href = 'about.html'"><i class="far fa-id-card"></i> Thông tin cá
+                        nhân</a>
+                </li>
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                            class="fas fa-blog"></i> Blog</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#" onclick="location.href='programming.html'"><i class="fas fa-code"></i> Nhập môn
+                                lập trình</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href='dataStructuresAndAlgorithms.html'"><i
+                                    class="fas fa-project-diagram"></i> Cấu trúc dữ liệu và giải thuật</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href='sqlServer.html'"><i class="fas fa-database"></i> Hệ quản trị cơ sở dữ liệu</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href='news.html'"><i class="far fa-newspaper"></i> Tin tức</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                            class="far fa-folder-open"></i> Tài liệu</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#" onclick="location.href='ebook.html'"><i class="fas fa-book"></i> E-book</a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick="location.href='exam.html'"><i class="far fa-file-alt"></i> Đề thi</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href='otherDocuments.html'"><i
+                                    class="fas fa-file-contract"></i> Tài liệu khác</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" onclick="location.href = 'contact.html'"><i class="far fa-paper-plane"></i> Liên hệ</a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <!-- Facebook -->
+                    <a class="btn btn-primary m-1 sfb" href="#!"
+                        role="button"><i class="fab fa-facebook-f"></i></a>
+
+                    <!-- Twitter -->
+                    <a class="btn btn-primary m-1 stw"href="#!"
+                        role="button"><i class="fab fa-twitter"></i></a>
+
+                    <!-- Google -->
+                    <a class="btn btn-primary m-1 sgg" href="#!"
+                        role="button"><i class="fab fa-google"></i></a>
+                    <!-- Github -->
+                    <a class="btn btn-primary m-1 sg" href="#!"
+                        role="button"><i class="fab fa-github"></i></a>
+                </section>
+
+                <p class="pl-2 text-justify">Đăng ký nhận tin:</p>
+                <div class="input-group my-2">
+                    <input type="email" class="form-control bg-light" placeholder="Email của bạn?">
+                    <div class="input-group-append">
+                        <button class="btn btn-success" type="button">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+                <span class="text-center" style="font-size:14px; "><i class="far fa-copyright"></i> Copyright by G4 CNTT1502 </span>
+            </div>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <button class="btn btn-secondary d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto my-2">
+                            <li class="nav-item active">
+                                <div class="input-group">
+                                    <input type="text" class="form-control bg-light" placeholder="Bạn cần tìm gì?">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" type="button">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item" data-toggle="modal" data-target="#myModal">
+                                <a class="nav-link" href="#" onclick="location.href = 'login.html'"><i
+                                        class="fas fa-sign-in-alt"></i> Đăng nhập</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" onclick="location.href = 'account.html'"><i
+                                        class="fas fa-user"></i> Tài khoản</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container">
+                <div class="justify-content-center">
+                    <h3 class="text-center font-weight-bolder p-2">Tài liệu tổng hợp khác</h3>
+
+                    <div class="row m-2 justify-content-center">
+                        <div class=" col-md-5 m-3 " id="otherDocuments">
+                            <div class="border-bottom border-primary m-2">
+                                <h5 class="text-center p-2 font-weight-bold">Lorem ipsum dolor sit amet.</h5>
+                            </div>
+
+                            <ul class="p-2 list-unstyled pre-scrollable" role="menu">
+                                <li class="p-2 border-bottom border-secondary text-center">
+                                    <img class="image" src="../IMG/Binary-Search.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img class="image" src="../IMG/C++.jpg" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img src="../IMG/Linkedlist.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img class="image" src="../IMG/Binary-Search.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img class="image" src="../IMG/doubleLinkedList.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img src="../IMG/Linkedlist.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img class="image" src="../IMG/Binary-Search.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img class="image" src="../IMG/queue.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img src="../IMG/pro-csharp-7-8th-edition.jpg" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img class="image" src="../IMG/queue.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img class="image" src="../IMG/doubleLinkedList.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img src="../IMG/Linkedlist.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img class="image" src="../IMG/Binary-Search.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img class="image" src="../IMG/doubleLinkedList.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img src="../IMG/Linkedlist.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class=" col-md-5 m-3" id="otherDocuments">
+                            <div class="border-bottom border-primary m-2">
+                                <h5 class="text-center p-2 font-weight-bold">Lorem ipsum dolor sit amet.</h5>
+                            </div>
+
+                            <ul class="p-2 list-unstyled pre-scrollable" role="menu">
+                                <li class="p-2 border-bottom border-secondary text-center">
+                                    <img class="image" src="../IMG/Binary-Search.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img class="image" src="../IMG/doubleLinkedList.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img src="../IMG/Linkedlist.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img class="image" src="../IMG/Binary-Search.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img class="image" src="../IMG/doubleLinkedList.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img src="../IMG/Linkedlist.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img class="image" src="../IMG/Binary-Search.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img class="image" src="../IMG/doubleLinkedList.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img src="../IMG/Linkedlist.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img class="image" src="../IMG/queue.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img class="image" src="../IMG/doubleLinkedList.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img src="../IMG/Linkedlist.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img class="image" src="../IMG/Binary-Search.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img class="image" src="../IMG/doubleLinkedList.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+                                <li class="p-2 border-bottom border-dark text-center">
+                                    <img src="../IMG/Linkedlist.png" alt="">
+                                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to top button -->
+        <button type="button" class="btn btn-danger btn-floating btn-lg" id="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+
+        // back to top button
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 50) {
+                    $('#back-to-top').fadeIn();
+                } else {
+                    $('#back-to-top').fadeOut();
+                }
+            });
+            // scroll body to 0px on click
+            $('#back-to-top').click(function () {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 400);
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>

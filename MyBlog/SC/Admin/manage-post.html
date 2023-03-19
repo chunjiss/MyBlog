@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../CSS/admin.css">
+    <link rel="stylesheet" href="../JS/bootstrap/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../JS/jquery/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="../JS/bootstrap/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+    <script src="../JS/bootstrap/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../JS/bootstrap/bootstrap-4.6.0-dist/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <a class="sidebar-brand" href="../HTML/admin.html">
+                    <span class="pl-4 text-white font-weight-bolder">Administration</span>
+                </a>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a class="sidebar-link" onclick="location.href='admin.html'" href="#">
+                        <i class="fab fa-buffer"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href=""><i class="far fa-user"></i> Profile</a>
+                </li>
+                <li>
+                    <a href=""><i class="fas fa-cog"></i> Settings</a>
+                </li>
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i
+                            class="far fa-clipboard"></i> Manage</a>
+
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#" onclick="location.href='manage-post.html'"><i class="far fa-copy"></i> Post</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href=''"><i class="fas fa-bars"></i> Menu</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href=''"><i class="fab fa-wpforms"></i> Form</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href='manage-user-accounts.html'"><i class="far fa-user-circle"></i> User</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" onclick="location.href = 'statistical.html'"><i class="fas fa-chart-line"></i>
+                        Statistical</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <button class="btn btn-light d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-cog"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto my-2">
+                            <li class="nav-item active m-2">
+                                <div class="input-group">
+                                    <input type="text" class="form-control bg-light" placeholder="Search...">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown mt-2">
+                                <button class="btn btn-link" href="#" id="alertsDropdown" data-toggle="dropdown">
+                                    <img src="../IMG/bell.png" width="35px" height="35px"
+                                        class="avatar img-fluid rounded mr-1" alt="avt-admin" />
+                                    <span class="indicator">2</span>
+                                </button>
+
+                                <div class="dropdown-menu dropdown-menu-sm-right p-0 m-0" id="notifications"
+                                    aria-labelledby="alertsDropdown">
+                                    <div class="list-group text-center">
+                                        <div href="#"
+                                            class="list-group-item disabled text-dark font-weight-bolder text-center">
+                                            Thông báo mới
+                                        </div>
+
+                                        <div href="#" class="list-group-item list-group-item-action align-items-center">
+                                            <div class="row">
+                                                <div class="col-md-2 align-items-center text-success pt-5">
+                                                    <i class="far fa-check-circle"></i>
+                                                </div>
+
+                                                <div class="col-md-10 text-left align-items-center">
+                                                    <h6 class="text-dark font-weight-bold">Cập nhập bài viết thành công
+                                                    </h6>
+                                                    <p class="text-black-50">Bạn đã thực hiện thao tác cập nhật nội dung
+                                                        bài
+                                                        viết</p>
+                                                    <small class="text-black-50">25 phút trước</small>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div href="#" class="list-group-item list-group-item-action align-items-center">
+                                            <div class="row">
+                                                <div class="col-md-2 align-items-center text-danger pt-5">
+                                                    <i class="fas fa-exclamation"></i>
+                                                </div>
+
+                                                <div class="col-md-10 text-left align-items-center">
+                                                    <h6 class="text-dark font-weight-bold">Thông báo đăng nhập</h6>
+                                                    <p class="text-black-50">Bạn đã đăng nhập thành công vào 127.0.0.1
+                                                    </p>
+                                                    <small class="text-black-50">3 giờ trước</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="list-group-item list-group-item-action">Xem tất cả thông
+                                            báo</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item mt-2">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle" type="button" id="dropdownMenu"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img src="../IMG/admin-avt.jpg" width="30px" height="30px"
+                                            class="avatar img-fluid rounded mr-1" alt="avt-admin" /> <span
+                                            class="text-dark tex">Admin</span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-sm-right" aria-labelledby="dropdownMenu">
+                                        <button class="dropdown-item" type="button">
+                                            <i class="far fa-user"></i> Profile
+                                        </button>
+                                        <button class="dropdown-item" type="button">
+                                            <i class="fas fa-cogs"></i> Settings & Privacy
+                                        </button>
+                                        <button class="dropdown-item" type="button">
+                                            <i class="far fa-question-circle"></i> Help Center
+                                        </button>
+                                        <button class="dropdown-item" type="button">
+                                            <i class="fas fa-sign-out-alt"></i> Log out
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="text-center">#</th>
+                                <th>Post title</th>
+                                <th>List of articles</th>
+                                <th>Post date</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="text-center">1</th>
+                                <td>Title 1</td>
+                                <td>Programming</td>
+                                <td>30/06/2021</td>
+                                <td class="text-center">
+                                    <a class="btn btn-sm btn-info" data-toggle="tooltip" title="See details"><i
+                                            class="far fa-eye"></i></a>
+                                    <a class="btn btn-sm btn-success m-2" data-toggle="tooltip" title="Edit"><i
+                                            class="fas fa-pencil-alt"></i></a>
+                                    <a class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete"><i
+                                            class="fas fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row" class="text-center">2</th>
+                                <td>Title2</td>
+                                <td>News</td>
+                                <td>28/06/2021</td>
+                                <td class="text-center">
+                                    <a class="btn btn-sm btn-info" data-toggle="tooltip" title="See details"><i
+                                            class="far fa-eye"></i></a>
+                                    <a class="btn btn-sm btn-success m-2" data-toggle="tooltip" title="Edit"><i
+                                            class="fas fa-pencil-alt"></i></a>
+                                    <a class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete"><i
+                                            class="fas fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row" class="text-center">3</th>
+                                <td>Title 3</td>
+                                <td>E-book</td>
+                                <td>25/06/2021</td>
+                                <td class="text-center">
+                                    <a class="btn btn-sm btn-info" data-toggle="tooltip" title="See details"><i
+                                            class="far fa-eye"></i></a>
+                                    <a class="btn btn-sm btn-success m-2" data-toggle="tooltip" title="Edit"><i
+                                            class="fas fa-pencil-alt"></i></a>
+                                    <a class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete"><i
+                                            class="fas fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row" class="text-center">4</th>
+                                <td>Title 4</td>
+                                <td>Exam</td>
+                                <td>01/07/2021</td>
+                                <td class="text-center">
+                                    <a class="btn btn-sm btn-info" data-toggle="tooltip" title="See details"><i
+                                            class="far fa-eye"></i></a>
+                                    <a class="btn btn-sm btn-success m-2" data-toggle="tooltip" title="Edit"><i
+                                            class="fas fa-pencil-alt"></i></a>
+                                    <a class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete"><i
+                                            class="fas fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row" class="text-center">5</th>
+                                <td>Title 5</td>
+                                <td>E-book</td>
+                                <td>29/06/2021</td>
+                                <td class="text-center">
+                                    <a class="btn btn-sm btn-info" data-toggle="tooltip" title="See details"><i
+                                            class="far fa-eye"></i></a>
+                                    <a class="btn btn-sm btn-success m-2" data-toggle="tooltip" title="Edit"><i
+                                            class="fas fa-pencil-alt"></i></a>
+                                    <a class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete"><i
+                                            class="fas fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row" class="text-center">6</th>
+                                <td>Title 6</td>
+                                <td>Programming</td>
+                                <td>20/06/2021</td>
+                                <td class="text-center">
+                                    <a class="btn btn-sm btn-info" data-toggle="tooltip" title="See details"><i
+                                            class="far fa-eye"></i></a>
+                                    <a class="btn btn-sm btn-success m-2" data-toggle="tooltip" title="Edit"><i
+                                            class="fas fa-pencil-alt"></i></a>
+                                    <a class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete"><i
+                                            class="fas fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row" class="text-center">7</th>
+                                <td>Title 7</td>
+                                <td>SQL-Server</td>
+                                <td>20/06/2021</td>
+                                <td class="text-center">
+                                    <a class="btn btn-sm btn-info" data-toggle="tooltip" title="See details"><i
+                                            class="far fa-eye"></i></a>
+                                    <a class="btn btn-sm btn-success m-2" data-toggle="tooltip" title="Edit"><i
+                                            class="fas fa-pencil-alt"></i></a>
+                                    <a class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete"><i
+                                            class="fas fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row" class="text-center">8</th>
+                                <td>Title 8</td>
+                                <td>Other document</td>
+                                <td>15/06/2021</td>
+                                <td class="text-center">
+                                    <a class="btn btn-sm btn-info" data-toggle="tooltip" title="See details"><i
+                                            class="far fa-eye"></i></a>
+                                    <a class="btn btn-sm btn-success m-2" data-toggle="tooltip" title="Edit"><i
+                                            class="fas fa-pencil-alt"></i></a>
+                                    <a class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete"><i
+                                            class="fas fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row" class="text-center">9</th>
+                                <td>Title 9</td>
+                                <td>Data structure and algorithm</td>
+                                <td>12/06/2021</td>
+                                <td class="text-center">
+                                    <a class="btn btn-sm btn-info" data-toggle="tooltip" title="See details"><i
+                                            class="far fa-eye"></i></a>
+                                    <a class="btn btn-sm btn-success m-2" data-toggle="tooltip" title="Edit"><i
+                                            class="fas fa-pencil-alt"></i></a>
+                                    <a class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete"><i
+                                            class="fas fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row" class="text-center">10</th>
+                                <td>Title 10</td>
+                                <td>News</td>
+                                <td>10/09/2021</td>
+                                <td class="text-center">
+                                    <a class="btn btn-sm btn-info" data-toggle="tooltip" title="See details"><i
+                                            class="far fa-eye"></i></a>
+                                    <a class="btn btn-sm btn-success m-2" data-toggle="tooltip" title="Edit"><i
+                                            class="fas fa-pencil-alt"></i></a>
+                                    <a class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete"><i
+                                            class="fas fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Back to top button -->
+                <button type="button" class="btn btn-danger btn-floating btn-lg" id="back-to-top">
+                    <i class="fas fa-arrow-up"></i>
+                </button>
+
+                <nav>
+                    <ul class="pagination m-3 justify-content-end">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar').toggleClass('active');
+                });
+            });
+
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+
+            $(document).ready(function () {
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 50) {
+                        $('#back-to-top').fadeIn();
+                    } else {
+                        $('#back-to-top').fadeOut();
+                    }
+                });
+                // scroll body to 0px on click
+                $('#back-to-top').click(function () {
+                    $('body,html').animate({
+                        scrollTop: 0
+                    }, 400);
+                    return false;
+                });
+            });
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../CSS/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="../JS/jquery/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="../JS/bootstrap/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../JS/bootstrap/bootstrap-4.6.0-dist/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <a class="sidebar-brand" href="../HTML/admin.html">
+                    <span class="pl-4 text-white font-weight-bolder">Administration</span>
+                </a>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a class="sidebar-link" onclick="location.href='admin.html'" href="#">
+                        <i class="fab fa-buffer"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href=""><i class="far fa-user"></i> Profile</a>
+                </li>
+                <li>
+                    <a href=""><i class="fas fa-cog"></i> Settings</a>
+                </li>
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i
+                            class="far fa-clipboard"></i> Manage</a>
+
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#" onclick="location.href='manage-post.html'"><i class="far fa-copy"></i> Post</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href=''"><i class="fas fa-bars"></i> Menu</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href=''"><i class="fab fa-wpforms"></i> Form</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href='manage-user-accounts.html'"><i class="far fa-user-circle"></i> User</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" onclick="location.href = 'statistical.html'"><i class="fas fa-chart-line"></i>
+                        Statistical</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <button class="btn btn-light d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-cog"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto my-2">
+                            <li class="nav-item active m-2">
+                                <div class="input-group">
+                                    <input type="text" class="form-control bg-light" placeholder="Search...">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown mt-2">
+                                <button class="btn btn-link" href="#" id="alertsDropdown" data-toggle="dropdown">
+                                    <img src="../IMG/bell.png" width="35px" height="35px"
+                                        class="avatar img-fluid rounded mr-1" alt="avt-admin" />
+                                    <span class="indicator">2</span>
+                                </button>
+
+                                <div class="dropdown-menu dropdown-menu-sm-right p-0 m-0" id="notifications"
+                                    aria-labelledby="alertsDropdown">
+                                    <div class="list-group text-center">
+                                        <div href="#"
+                                            class="list-group-item disabled text-dark font-weight-bolder text-center">
+                                            Thông báo mới
+                                        </div>
+
+                                        <div href="#" class="list-group-item list-group-item-action align-items-center">
+                                            <div class="row">
+                                                <div class="col-md-2 align-items-center text-success pt-5">
+                                                    <i class="far fa-check-circle"></i>
+                                                </div>
+
+                                                <div class="col-md-10 text-left align-items-center">
+                                                    <h6 class="text-dark font-weight-bold">Cập nhập bài viết thành công
+                                                    </h6>
+                                                    <p class="text-black-50">Bạn đã thực hiện thao tác cập nhật nội dung
+                                                        bài
+                                                        viết</p>
+                                                    <small class="text-black-50">25 phút trước</small>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div href="#" class="list-group-item list-group-item-action align-items-center">
+                                            <div class="row">
+                                                <div class="col-md-2 align-items-center text-danger pt-5">
+                                                    <i class="fas fa-exclamation"></i>
+                                                </div>
+
+                                                <div class="col-md-10 text-left align-items-center">
+                                                    <h6 class="text-dark font-weight-bold">Thông báo đăng nhập</h6>
+                                                    <p class="text-black-50">Bạn đã đăng nhập thành công vào 127.0.0.1
+                                                    </p>
+                                                    <small class="text-black-50">3 giờ trước</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="list-group-item list-group-item-action">Xem tất cả thông
+                                            báo</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item mt-2">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle" type="button" id="dropdownMenu"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img src="../IMG/admin-avt.jpg" width="30px" height="30px"
+                                            class="avatar img-fluid rounded mr-1" alt="avt-admin" /> <span
+                                            class="text-dark tex">Admin</span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-sm-right" aria-labelledby="dropdownMenu">
+                                        <button class="dropdown-item" type="button">
+                                            <i class="far fa-user"></i> Profile
+                                        </button>
+                                        <button class="dropdown-item" type="button">
+                                            <i class="fas fa-cogs"></i> Settings & Privacy
+                                        </button>
+                                        <button class="dropdown-item" type="button">
+                                            <i class="far fa-question-circle"></i> Help Center
+                                        </button>
+                                        <button class="dropdown-item" type="button">
+                                            <i class="fas fa-sign-out-alt"></i> Log out
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container">
+
+                <div class="card">
+                    <div class="card-header">
+
+
+                        <h3 class="font-weight-bold text-dark-50">User account</h3>
+
+
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped p-0 m-0">
+                            <thead>
+
+                                <tr>
+                                    <th scope="col" class="text-center">ID</th>
+                                    <th scope="col">Account name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Password</th>
+                                    <th scope="col" class="text-center">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row" class="text-center">AC1</th>
+                                    <td>Mark</td>
+                                    <td>abc@gamil.com</td>
+                                    <td>jsahfds@1dsf</td>
+                                    <td class="text-success text-center"> Online</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="text-center">AC2</th>
+                                    <td>Jacob</td>
+                                    <td>xyz@gamil.com</td>
+                                    <td>qewfesc@312</td>
+                                    <td class="text-danger text-center">Offline</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="text-center">AC3</th>
+                                    <td>Larry</td>
+                                    <td>qwert@gamil.com</td>
+                                    <td>1@sfkdj12%</td>
+                                    <td class="text-success text-center">Online</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row" class="text-center">AC4</th>
+                                    <td>Nas</td>
+                                    <td>abcxys@gamil.com</td>
+                                    <td>@twitter!25</td>
+                                    <td class="text-success text-center">Online</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row" class="text-center">AC5</th>
+                                    <td>Odd</td>
+                                    <td>alas@gamil.com</td>
+                                    <td>@twitter#&</td>
+                                    <td class="text-success text-center">Online</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row" class="text-center">AC6</th>
+                                    <td>Jimmy</td>
+                                    <td>thornton@gamil.com</td>
+                                    <td>twei@3242s</td>
+                                    <td class="text-danger text-center">Offline</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row" class="text-center">AC7</th>
+                                    <td>Jack</td>
+                                    <td>tom@gamil.com</td>
+                                    <td>@fbasae$233!</td>
+                                    <td class="text-danger text-center">Offline</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row" class="text-center">AC8</th>
+                                    <td>Thirds</td>
+                                    <td>iasfp@gamil.com</td>
+                                    <td>123askjA@</td>
+                                    <td class="text-success text-center">Online</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row" class="text-center">AC9</th>
+                                    <td>Jon</td>
+                                    <td>max@gamil.com</td>
+                                    <td>wqlk12#!sda</td>
+                                    <td class="text-success text-center">Online</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row" class="text-center">AC10</th>
+                                    <td>Lucy</td>
+                                    <td>laske@gamil.com</td>
+                                    <td>tow@S123</td>
+                                    <td class="text-danger text-center">Offline</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <nav>
+                <ul class="pagination m-3 justify-content-end">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

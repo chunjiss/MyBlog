@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sách</title>
+    <link rel="stylesheet" href="../CSS/e-bookDetails.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="../JS/jquery/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="../JS/bootstrap/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../JS/bootstrap/bootstrap-4.6.0-dist/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>abMe.com</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#" onclick="location.href = 'home.html'"><i class="fas fa-home"></i> Trang chủ</a>
+                </li>
+                <li>
+                    <a href="#" onclick="location.href = 'about.html'"><i class="far fa-id-card"></i> Thông tin cá
+                        nhân</a>
+                </li>
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" class="dropdown-toggle"><i class="fas fa-blog"></i>
+                        Blog</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#" onclick="location.href='programming.html'"><i class="fas fa-code"></i> Nhập môn
+                                lập trình</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href='dataStructuresAndAlgorithms.html'"><i
+                                    class="fas fa-project-diagram"></i> Cấu trúc dữ liệu và giải thuật</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href='sqlServer.html'"><i class="fas fa-database"></i> Hệ quản
+                                trị cơ sở dữ liệu</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href='news.html'"><i class="far fa-newspaper"></i> Tin tức</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" class="dropdown-toggle"><i
+                            class="far fa-folder-open"></i> Tài liệu</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#" onclick="location.href='ebook.html'"><i class="fas fa-book"></i> E-book</a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick="location.href='exam.html'"><i class="far fa-file-alt"></i> Đề thi</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="location.href='otherDocuments.html'"><i
+                                    class="fas fa-file-contract"></i> Tài liệu khác</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" onclick="location.href = 'contact.html'"><i class="far fa-paper-plane"></i> Liên hệ</a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <!-- Facebook -->
+                    <a class="btn btn-primary m-1 sfb" href="#!"
+                        role="button"><i class="fab fa-facebook-f"></i></a>
+
+                    <!-- Twitter -->
+                    <a class="btn btn-primary m-1 stw"href="#!"
+                        role="button"><i class="fab fa-twitter"></i></a>
+
+                    <!-- Google -->
+                    <a class="btn btn-primary m-1 sgg" href="#!"
+                        role="button"><i class="fab fa-google"></i></a>
+                    <!-- Github -->
+                    <a class="btn btn-primary m-1 sg" href="#!"
+                        role="button"><i class="fab fa-github"></i></a>
+                </section>
+
+                <p class="pl-2 text-justify">Đăng ký nhận tin:</p>
+                <div class="input-group my-2">
+                    <input type="email" class="form-control bg-light" placeholder="Email của bạn?">
+                    <div class="input-group-append">
+                        <button class="btn btn-success" type="button">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+                <span class="text-center" style="font-size:14px; "><i class="far fa-copyright"></i> Copyright by G4 CNTT1502 </span>
+            </div>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+
+                    <button class="btn btn-secondary d-inline-block d-lg-none ml-auto" type="button"
+                        data-toggle="collapse" data-target="#navbarSupportedContent">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto my-2">
+                            <li class="nav-item active">
+                                <div class="input-group">
+                                    <input type="text" class="form-control bg-light" placeholder="Bạn cần tìm gì?">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" type="button">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item" data-toggle="modal" data-target="#myModal">
+                                <a class="nav-link" href="#" onclick="location.href = 'login.html'"><i
+                                        class="fas fa-sign-in-alt"></i> Đăng nhập</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" onclick="location.href = 'account.html'"><i
+                                        class="fas fa-user"></i> Tài khoản</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container" id="e-bookDetails">
+
+                <div class="border-bottom border-secondary">
+                    <h3>Pro C# 7, 8th Edition</h3>
+                </div>
+
+                <div class="row m-2 p-2">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="../IMG/pro-csharp-7-8th-edition.jpg" alt="book">
+                        </div>
+                    </div>
+
+                    <div class="col-md-9">
+                        <ul class="pt-3">
+                            <li><strong>Tác giả: </strong>Andrew Troelsen, Philip Japikse</li>
+                            <li><strong>Năm xuất bản:</strong> 2017</li>
+                            <li><strong>Số trang:</strong> 1372</li>
+                            <li><strong>Kích thước file:</strong> 29.5MB</li>
+                            <li><strong>Định dạng file:</strong> pdf</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="m-3">
+                    <strong><u> Mô tả sách </u></strong>
+                    <div>
+                        <p>
+                            This essential classic title provides a comprehensive foundation in the C#
+                            programming language and the frameworks it lives in. Now in its 8th edition,
+                            you’ll find all the very latest C# 7.1 and .NET 4.7 features here, along with
+                            four brand new chapters on Microsoft’s lightweight, cross-platform framework,
+                            .NET Core, up to and including .NET Core 2.0. Coverage of ASP.NET Core, Entity
+                            Framework (EF) Core, and more, sits alongside the latest updates to .NET,
+                            including Windows Presentation Foundation (WPF), Windows Communication
+                            Foundation (WCF), and ASP.NET MVC.
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            Dive in and discover why Pro C# has been a favorite of C# developers worldwide
+                            for over 15 years. Gain a solid foundation in object-oriented development
+                            techniques, attributes and reflection, generics and collections as well as
+                            numerous advanced topics not found in other texts (such as CIL opcodes and
+                            emitting dynamic assemblies). With the help of this book you’ll have the
+                            confidence to put C# into practice and explore the .NET universe on your own
+                            terms.
+                        </p>
+                    </div>
+
+                    <div>
+                        <strong>What You Will Learn?</strong>
+                        <ul class="ml-3 pl-3">
+                            <li>Discover the latest C# 7.1 features, from tuples to pattern matching</li>
+                            <li>Hit the ground running with Microsoft’s lightweight, open source .NET Core
+                                platform, including ASP.NET Core MVC, ASP.NET Core web services, and Entity
+                                Framework Core</li>
+                            <li>Find complete coverage of XAML, .NET 4.7 and Visual Studio 2017</li>
+                            <li>Understand the philosophy behind .NET and the new, cross-platform alternative, .NET Core
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="row m-1 border-bottom border-info">
+                    <div class="p-2">
+                        <button class="btn btn-success mr-2">
+                            <i class="fa fa-download" aria-hidden="true"></i> Download
+                        </button>
+
+                        <button class="btn btn-primary" data-toggle="collapse" data-target="#socialNetworks">
+                            <i class="fa fa-share" aria-hidden="true"></i> Share
+                        </button>
+                    </div>
+
+                    <div class="col-lg-2 ml-3 mt-2 mb-2">
+                        <div class="collapse multi-collapse" id="socialNetworks">
+                            <div class="row justify-content-center" id="socialMedia">
+                                <button class="btn btn-sm btn-primary m-1"><i class="fab fa-facebook"></i></button>
+                                <button class="btn btn-sm btn-primary m-1"><i class="fab fa-twitter"></i></button>
+                                <button class="btn btn-sm btn-primary m-1"><i
+                                        class="fab fa-facebook-messenger"></i></button>
+                                <button class="btn btn-sm btn-info m-1"><i class="fab fa-linkedin-in"></i></button>
+                                <button class="btn btn-sm btn-dark m-1"><i class="fab fa-github"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="m-2" id="otherBooks">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h3 class="text-dark font-weight-bolder">Other books: </h3>
+                            </div>
+
+                            <div class="col-6 text-right">
+                                <a class="btn btn-primary mb-3 mr-1" href="#slideBook" role="button" data-slide="prev">
+                                    <i class="fa fa-arrow-left"></i>
+                                </a>
+                                <a class="btn btn-primary mb-3 " href="#slideBook" role="button" data-slide="next">
+                                    <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <div class="col-md-12">
+                                <div id="slideBook" class="carousel slide" data-ride="carousel">
+
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <div class="row">
+                                                <div class="col-md-3 pt-2">
+                                                    <div class="card">
+                                                        <img class="card-img-top" src="../IMG/head-first-c.jpg"
+                                                            alt="book">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">C-Programming</h5>
+                                                            <p class="card-text">Lorem, ipsum dolor sit amet
+                                                                consectetur adipisicing elit.
+                                                                Nulla,
+                                                                possimus.</p>
+                                                        </div>
+
+                                                        <div class="card-footer d-inline btn-group-sm">
+                                                            <button class="btn btn-primary"><i
+                                                                    class="fas fa-book-reader"></i> Read</button>
+                                                            <button class="btn btn-primary"><i
+                                                                    class="far fa-share-square"></i> Share</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 pt-2">
+                                                    <div class="card">
+                                                        <img class="card-img-top" src="../IMG/head-first-c.jpg"
+                                                            alt="book">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">C-Programming</h5>
+                                                            <p class="card-text">Lorem, ipsum dolor sit amet
+                                                                consectetur adipisicing elit.
+                                                                Nulla,
+                                                                possimus.</p>
+                                                        </div>
+
+                                                        <div class="card-footer d-inline btn-group-sm">
+                                                            <button class="btn btn-primary"><i
+                                                                    class="fas fa-book-reader"></i> Read</button>
+                                                            <button class="btn btn-primary"><i
+                                                                    class="far fa-share-square"></i> Share</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 pt-2">
+                                                    <div class="card">
+                                                        <img class="card-img-top" src="../IMG/head-first-c.jpg"
+                                                            alt="book">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">C-Programming</h5>
+                                                            <p class="card-text">Lorem, ipsum dolor sit amet
+                                                                consectetur adipisicing elit.
+                                                                Nulla,
+                                                                possimus.</p>
+                                                        </div>
+
+                                                        <div class="card-footer d-inline btn-group-sm">
+                                                            <button class="btn btn-primary"><i
+                                                                    class="fas fa-book-reader"></i> Read</button>
+                                                            <button class="btn btn-primary"><i
+                                                                    class="far fa-share-square"></i> Share</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-3 pt-2">
+                                                    <div class="card">
+                                                        <img class="card-img-top" src="../IMG/head-first-c.jpg"
+                                                            alt="book">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">C-Programming</h5>
+                                                            <p class="card-text">Lorem, ipsum dolor sit amet
+                                                                consectetur adipisicing elit.
+                                                                Nulla,
+                                                                possimus.</p>
+                                                        </div>
+
+                                                        <div class="card-footer d-inline btn-group-sm">
+                                                            <button class="btn btn-primary"><i
+                                                                    class="fas fa-book-reader"></i> Read</button>
+                                                            <button class="btn btn-primary"><i
+                                                                    class="far fa-share-square"></i> Share</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="carousel-item">
+                                            <div class="row">
+                                                <div class="col-md-3 pt-2">
+                                                    <div class="card">
+                                                        <img class="card-img-top" src="../IMG/C-programming-dummies.jpg"
+                                                            alt="book">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">C-Programming</h5>
+                                                            <p class="card-text">Lorem, ipsum dolor sit amet
+                                                                consectetur adipisicing elit.
+                                                                Nulla,
+                                                                possimus.</p>
+                                                        </div>
+
+                                                        <div class="card-footer d-inline btn-group-sm">
+                                                            <button class="btn btn-primary"><i
+                                                                    class="fas fa-book-reader"></i> Read</button>
+                                                            <button class="btn btn-primary"><i
+                                                                    class="far fa-share-square"></i> Share</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 pt-2">
+                                                    <div class="card">
+                                                        <img class="card-img-top" src="../IMG/C-programming-dummies.jpg"
+                                                            alt="book">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">C-Programming</h5>
+                                                            <p class="card-text">Lorem, ipsum dolor sit amet
+                                                                consectetur adipisicing elit.
+                                                                Nulla,
+                                                                possimus.</p>
+                                                        </div>
+
+                                                        <div class="card-footer d-inline btn-group-sm">
+                                                            <button class="btn btn-primary"><i
+                                                                    class="fas fa-book-reader"></i> Read</button>
+                                                            <button class="btn btn-primary"><i
+                                                                    class="far fa-share-square"></i> Share</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 pt-2">
+                                                    <div class="card">
+                                                        <img class="card-img-top" src="../IMG/C-programming-dummies.jpg"
+                                                            alt="book">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">C-Programming</h5>
+                                                            <p class="card-text">Lorem, ipsum dolor sit amet
+                                                                consectetur adipisicing elit.
+                                                                Nulla,
+                                                                possimus.</p>
+                                                        </div>
+
+                                                        <div class="card-footer d-inline btn-group-sm">
+                                                            <button class="btn btn-primary"><i
+                                                                    class="fas fa-book-reader"></i> Read</button>
+                                                            <button class="btn btn-primary"><i
+                                                                    class="far fa-share-square"></i> Share</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-3 pt-2">
+                                                    <div class="card">
+                                                        <img class="card-img-top" src="../IMG/C-programming-dummies.jpg"
+                                                            alt="book">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">C-Programming</h5>
+                                                            <p class="card-text">Lorem, ipsum dolor sit amet
+                                                                consectetur adipisicing elit.
+                                                                Nulla,
+                                                                possimus.</p>
+                                                        </div>
+
+                                                        <div class="card-footer d-inline btn-group-sm">
+                                                            <button class="btn btn-primary"><i
+                                                                    class="fas fa-book-reader"></i> Read</button>
+                                                            <button class="btn btn-primary"><i
+                                                                    class="far fa-share-square"></i> Share</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="carousel-item">
+                                            <div class="row">
+                                                <div class="col-md-3 pt-2">
+                                                    <div class="card">
+                                                        <img class="card-img-top" src="../IMG/C-programming.jpg"
+                                                            alt="book">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">C-Programming</h5>
+                                                            <p class="card-text">Lorem, ipsum dolor sit amet
+                                                                consectetur adipisicing elit.
+                                                                Nulla,
+                                                                possimus.</p>
+                                                        </div>
+
+                                                        <div class="card-footer d-inline btn-group-sm">
+                                                            <button class="btn btn-primary"><i
+                                                                    class="fas fa-book-reader"></i> Read</button>
+                                                            <button class="btn btn-primary"><i
+                                                                    class="far fa-share-square"></i> Share</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 pt-2">
+                                                    <div class="card">
+                                                        <img class="card-img-top" src="../IMG/C-programming.jpg"
+                                                            alt="book">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">C-Programming</h5>
+                                                            <p class="card-text">Lorem, ipsum dolor sit amet
+                                                                consectetur adipisicing elit.
+                                                                Nulla,
+                                                                possimus.</p>
+                                                        </div>
+
+                                                        <div class="card-footer d-inline btn-group-sm">
+                                                            <button class="btn btn-primary"><i
+                                                                    class="fas fa-book-reader"></i> Read</button>
+                                                            <button class="btn btn-primary"><i
+                                                                    class="far fa-share-square"></i> Share</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 pt-2">
+                                                    <div class="card">
+                                                        <img class="card-img-top" src="../IMG/C-programming.jpg"
+                                                            alt="book">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">C-Programming</h5>
+                                                            <p class="card-text">Lorem, ipsum dolor sit amet
+                                                                consectetur adipisicing elit.
+                                                                Nulla,
+                                                                possimus.</p>
+                                                        </div>
+
+                                                        <div class="card-footer d-inline btn-group-sm">
+                                                            <button class="btn btn-primary"><i
+                                                                    class="fas fa-book-reader"></i> Read</button>
+                                                            <button class="btn btn-primary"><i
+                                                                    class="far fa-share-square"></i> Share</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-3 pt-2">
+                                                    <div class="card">
+                                                        <img class="card-img-top" src="../IMG/C-programming.jpg"
+                                                            alt="book">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">C-Programming</h5>
+                                                            <p class="card-text">Lorem, ipsum dolor sit amet
+                                                                consectetur adipisicing elit.
+                                                                Nulla,
+                                                                possimus.</p>
+                                                        </div>
+
+                                                        <div class="card-footer d-inline btn-group-sm">
+                                                            <button class="btn btn-primary"><i
+                                                                    class="fas fa-book-reader"></i> Read</button>
+                                                            <button class="btn btn-primary"><i
+                                                                    class="far fa-share-square"></i> Share</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to top button -->
+        <button type="button" class="btn btn-danger btn-floating btn-lg" id="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+
+        // back to top button
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 50) {
+                    $('#back-to-top').fadeIn();
+                } else {
+                    $('#back-to-top').fadeOut();
+                }
+            });
+            // scroll body to 0px on click
+            $('#back-to-top').click(function () {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 400);
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>
